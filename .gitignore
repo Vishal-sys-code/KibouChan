@@ -65,4 +65,7 @@ token.json
 # Application data
 instance/
 data/journal.json
-journal_data.json 
+journal_data.json
+
+# Vercel
+.vercel 
