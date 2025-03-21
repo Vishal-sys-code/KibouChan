@@ -2,6 +2,10 @@
 
 KibouChan is a full-stack mental health web application that helps users track their emotions and receive supportive suggestions based on their mood. The app uses machine learning to detect emotions from text entries and stores journal entries for mood tracking over time.
 
+## Disclaimer
+This website is under construction. If you want to work with me then you can mail me on: [pandeyvishal.mlprof@gmail.com](pandeyvishal.mlprof@gmail.com) <be>
+
+
 ## Features
 
 - 🧠 **Emotion Detection**: Uses Hugging Face's machine learning model to analyze emotional content in text
