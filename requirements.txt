@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+jinja2
+python-multipart
+pymongo
+transformers
+torch
+numpy
+pydantic
+python-dotenv

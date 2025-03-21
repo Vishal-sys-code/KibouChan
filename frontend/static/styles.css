@@ -1,0 +1,600 @@
+/* KibouChan - Mental Health App Styles */
+:root {
+    --primary-color: #ff9cce;
+    --primary-light: #ffb6e1;
+    --secondary-color: #90c1ff;
+    --tertiary-color: #aed4ff;
+    --accent-color: #d4b8e8;
+    --text-color: #f5f5f5;
+    --background-color: #2a2a36;
+    --card-color: #383844;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    --border-radius: 16px;
+    --mascot-color: #ffb6e1;
+    --mascot-face: #ffe6f2;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'M PLUS Rounded 1c', 'Quicksand', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Cute Background */
+.stars-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+    background-color: var(--background-color);
+    background-image: 
+        radial-gradient(#6e6e8c 1px, transparent 1px),
+        radial-gradient(#5a5a78 1px, transparent 1px);
+    background-size: 40px 40px;
+    background-position: 0 0, 20px 20px;
+}
+
+.stars, .twinkling {
+    display: none;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* Header Styles */
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+/* Mascot Character */
+.mascot-container {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 1rem;
+    position: relative;
+}
+
+.mascot {
+    width: 100px;
+    height: 100px;
+    background-color: var(--mascot-color);
+    border-radius: 50%;
+    position: relative;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    animation: float 3s ease-in-out infinite;
+}
+
+.mascot:before, .mascot:after {
+    content: '';
+    position: absolute;
+    background-color: var(--mascot-color);
+    border-radius: 50%;
+    top: -15px;
+}
+
+.mascot:before {
+    width: 30px;
+    height: 30px;
+    left: 10px;
+    transform: rotate(-30deg);
+}
+
+.mascot:after {
+    width: 30px;
+    height: 30px;
+    right: 10px;
+    transform: rotate(30deg);
+}
+
+.mascot-face {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    background-color: var(--mascot-face);
+    border-radius: 50%;
+    top: 15px;
+    left: 15px;
+}
+
+.mascot-eyes:before, .mascot-eyes:after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 15px;
+    background-color: #333;
+    border-radius: 50%;
+    top: 25px;
+}
+
+.mascot-eyes:before {
+    left: 18px;
+}
+
+.mascot-eyes:after {
+    right: 18px;
+}
+
+.mascot-blush:before, .mascot-blush:after {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 8px;
+    background-color: rgba(255, 156, 206, 0.6);
+    border-radius: 50%;
+    top: 35px;
+}
+
+.mascot-blush:before {
+    left: 10px;
+}
+
+.mascot-blush:after {
+    right: 10px;
+}
+
+.mascot-mouth {
+    position: absolute;
+    width: 25px;
+    height: 10px;
+    border-radius: 0 0 100px 100px;
+    background-color: #ff6b98;
+    bottom: 18px;
+    left: 23px;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.cute-divider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1.5rem 0;
+}
+
+.divider-heart, .divider-star {
+    display: inline-block;
+    margin: 0 15px;
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    animation: pulse 2s infinite;
+}
+
+.divider-star {
+    color: var(--secondary-color);
+    animation-delay: 0.5s;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+h1 {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 4px rgba(255, 156, 206, 0.3);
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    opacity: 0.9;
+}
+
+h2 {
+    font-size: 1.8rem;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h2 i {
+    margin-right: 10px;
+    font-size: 1.4rem;
+}
+
+h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+/* Main Section Styles */
+section {
+    background-color: var(--card-color);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(255, 156, 206, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Cute section corners */
+.section-corner {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: var(--primary-color);
+    z-index: 1;
+}
+
+.top-left {
+    top: 0;
+    left: 0;
+    border-radius: 0 0 100% 0;
+}
+
+.top-right {
+    top: 0;
+    right: 0;
+    border-radius: 0 0 0 100%;
+}
+
+.bottom-left {
+    bottom: 0;
+    left: 0;
+    border-radius: 0 100% 0 0;
+}
+
+.bottom-right {
+    bottom: 0;
+    right: 0;
+    border-radius: 100% 0 0 0;
+}
+
+/* Floating hearts and stars */
+.floating-hearts, .floating-stars {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.floating-hearts i, .floating-stars i {
+    position: absolute;
+    color: var(--primary-light);
+    opacity: 0.4;
+}
+
+.floating-stars i {
+    color: var(--secondary-color);
+}
+
+.heart1, .star1 {
+    top: 10%;
+    right: 10%;
+    font-size: 1.2rem;
+    animation: float-animation 6s ease-in-out infinite;
+}
+
+.heart2, .star2 {
+    top: 30%;
+    right: 20%;
+    font-size: 0.8rem;
+    animation: float-animation 7s ease-in-out infinite;
+    animation-delay: 1s;
+}
+
+.heart3, .star3 {
+    top: 60%;
+    right: 15%;
+    font-size: 1rem;
+    animation: float-animation 5s ease-in-out infinite;
+    animation-delay: 2s;
+}
+
+@keyframes float-animation {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    position: relative;
+    z-index: 2;
+}
+
+textarea {
+    width: 100%;
+    height: 150px;
+    padding: 1rem;
+    border-radius: 12px;
+    border: 2px solid var(--tertiary-color);
+    font-family: 'Nunito', 'Quicksand', sans-serif;
+    font-size: 1rem;
+    resize: none;
+    transition: border-color 0.3s;
+    background-color: rgba(255, 255, 255, 0.7);
+    color: var(--text-color);
+}
+
+textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+textarea::placeholder {
+    color: rgba(74, 74, 74, 0.6);
+}
+
+/* Button Styles */
+.btn {
+    padding: 0.8rem 1.5rem;
+    border-radius: 30px;
+    border: none;
+    font-family: 'Nunito', 'Quicksand', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn i {
+    margin-right: 8px;
+}
+
+.primary-btn {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.primary-btn:hover {
+    background-color: var(--primary-light);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.secondary-btn {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.secondary-btn:hover {
+    background-color: var(--tertiary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.tertiary-btn {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+.tertiary-btn:hover {
+    opacity: 0.9;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.outline-btn {
+    background-color: transparent;
+    border: 2px solid var(--tertiary-color);
+    color: var(--text-color);
+}
+
+.outline-btn:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    transform: translateY(-3px);
+}
+
+.btn-group {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+    justify-content: center;
+}
+
+/* Emotion Result Styles */
+.emotion-card {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 12px;
+}
+
+.emotion-icon-container {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 1rem;
+    position: relative;
+}
+
+.emotion-icon {
+    width: 60px;
+    height: 60px;
+    background-color: var(--primary-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    animation: pulse-icon 2s infinite;
+}
+
+.emotion-icon i {
+    font-size: 30px;
+    color: white;
+}
+
+@keyframes pulse-icon {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 156, 206, 0.7);
+    }
+    70% {
+        transform: scale(1.1);
+        box-shadow: 0 0 0 10px rgba(255, 156, 206, 0);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 156, 206, 0);
+    }
+}
+
+#emotion-result {
+    font-weight: 800;
+    color: var(--primary-color);
+    font-size: 1.2em;
+}
+
+#suggestion-text {
+    margin: 1.5rem 0;
+    line-height: 1.8;
+    font-size: 1.1em;
+}
+
+/* Timeline Styles */
+.timeline {
+    margin-top: 1.5rem;
+    position: relative;
+    z-index: 2;
+}
+
+.timeline-item {
+    border-left: 3px solid var(--tertiary-color);
+    padding-left: 1.5rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.timeline-item::before {
+    content: "";
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: var(--accent-color);
+    position: absolute;
+    left: -9px;
+    top: 0;
+    box-shadow: 0 0 8px rgba(255, 156, 206, 0.5);
+}
+
+.timeline-item.joy::before {
+    background-color: #ffd166;
+}
+
+.timeline-item.anger::before {
+    background-color: #ef476f;
+}
+
+.timeline-item.optimism::before {
+    background-color: #06d6a0;
+}
+
+.timeline-item.sadness::before {
+    background-color: #118ab2;
+}
+
+.timeline-date {
+    font-size: 0.85rem;
+    color: #888;
+    margin-bottom: 0.3rem;
+}
+
+.timeline-emotion {
+    font-weight: 700;
+    display: inline-block;
+    padding: 0.3rem 0.7rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-emotion.joy {
+    background-color: rgba(255, 209, 102, 0.2);
+    color: #cc8500;
+}
+
+.timeline-emotion.anger {
+    background-color: rgba(239, 71, 111, 0.2);
+    color: #c92a2a;
+}
+
+.timeline-emotion.optimism {
+    background-color: rgba(6, 214, 160, 0.2);
+    color: #2b8a3e;
+}
+
+.timeline-emotion.sadness {
+    background-color: rgba(17, 138, 178, 0.2);
+    color: #1098ad;
+}
+
+.timeline-text {
+    margin-top: 0.5rem;
+}
+
+.empty-state {
+    text-align: center;
+    color: #888;
+    padding: 2rem 0;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 2rem;
+    color: #888;
+    font-size: 0.9rem;
+}
+
+/* Utilities */
+.hidden {
+    display: none;
+} 
